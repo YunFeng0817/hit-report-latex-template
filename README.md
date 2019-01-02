@@ -2,7 +2,7 @@
 
 A LaTeX template of report in common format.
 
-## Usage
+#### Usage
 
 Simply
 
@@ -10,3 +10,5 @@ Simply
 xelatex report.tex
 ```
 
+#### Hint
+此latex模板修改自浙江大学实验模板,[原仓库](https://github.com/megrxu/zju-report-latex-template)
