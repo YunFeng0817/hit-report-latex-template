@@ -1,21 +1,21 @@
-\documentclass{zjureport}
+\documentclass{hitreport}
 % =============================================
 % Part 0 Edit the info
 % =============================================
 
-\major{信息工程}
-\name{徐阳}
-\title{本科实验报告}
-\stuid{3171002333}
-\college{信息与电子工程学院}
-\date{\zhtoday}
-\lab{寝室}
-\course{数字信号处理}
-\instructor{Hao}
-\grades{59}
-\expname{系统传输函数零极点分析}
-\exptype{设计实验}
-\partner{None}
+\major{}
+\name{}
+\title{实验报告}
+\stuid{} % 学号
+\college{}
+\date{\today}
+\lab{} %实验地点
+\course{}
+\instructor{}
+\grades{}
+\expname{} %实验名称
+\exptype{} % 实验类型
+\partner{} % 同组学生名字
 
 \begin{document}
 % =============================================
@@ -29,67 +29,67 @@
 % =============================================
 
 \section{实验目的和要求}
-  系统差分方程和传输函数是线性系统的重要概念，通过分析系统差分方程和传输函数的特性，编程查看系统零极点分布，加深对线性系统的了解。
+系统差分方程和传输函数是线性系统的重要概念，通过分析系统差分方程和传输函数的特性，编程查看系统零极点分布，加深对线性系统的了解。
 \section{实验内容和步骤}
 
-  \subsection{实验内容}
+\subsection{实验内容}
 
-    给出如下差分方程：
-    $$y(n) - (0.5+a)\times y(n-1) + 0.5ay(n-2) = x(n)$$
-    \begin{enumerate}
-      \item 求解系统传输函数表达式。
-      \item 当a取0.8，0.9，1.0，1.1时，画出零极点分布图。
-      \item 根据（2）中a的取值，分别画出幅频响应函数。
-    \end{enumerate}
+给出如下差分方程：
+$$y(n) - (0.5+a)\times y(n-1) + 0.5ay(n-2) = x(n)$$
+\begin{enumerate}
+  \item 求解系统传输函数表达式。
+  \item 当a取0.8，0.9，1.0，1.1时，画出零极点分布图。
+  \item 根据（2）中a的取值，分别画出幅频响应函数。
+\end{enumerate}
 
-  \subsection{实验步骤}
-    \begin{enumerate}
-      \item 编写程序，求解零极点
-      \item 画出图形。
-      \item 观察结果。
-    \end{enumerate}
+\subsection{实验步骤}
+\begin{enumerate}
+  \item 编写程序，求解零极点
+  \item 画出图形。
+  \item 观察结果。
+\end{enumerate}
 
 \section{主要仪器设备}
-  计算机，Matlab软件
+计算机，Matlab软件
 
 \section{操作方法和实验步骤}
-  \subsection{传输函数}
-    对差分方程进行处理，求出传输函数表达式。
-  \subsection{零极点分布图}
-    在此基础上，使用Matlab中的zplane函数进一步画出在不同a取值情况下的零极点分布图。
-  \subsection{幅频响应}
-    之后使用freqz函数画出不同a取值情况下的频率响应图像。
+\subsection{传输函数}
+对差分方程进行处理，求出传输函数表达式。
+\subsection{零极点分布图}
+在此基础上，使用Matlab中的zplane函数进一步画出在不同a取值情况下的零极点分布图。
+\subsection{幅频响应}
+之后使用freqz函数画出不同a取值情况下的频率响应图像。
 
 \section{实验数据记录和处理}
-  \subsection{传输函数}
-    根据差分方程，传输函数如下：
-    $$H(z) = \frac{Y(z)}{X(z)} = \frac{z^2}{z^2-(0.5+a)z+0.5a}$$
-  \subsection{零极点分布图}
-    a = 0.8，0.9，1.1时，系统的零极点分布图及程序如下：
-    \begin{enumerate}
-      \item 图像
-      \begin{center}
-        \includegraphics[width=0.6\linewidth]{01.jpg}
-      \end{center}
-      \item 代码
-      \lstinputlisting[language=MATLAB]{code/do.m}
-    \end{enumerate}
+\subsection{传输函数}
+根据差分方程，传输函数如下：
+$$H(z) = \frac{Y(z)}{X(z)} = \frac{z^2}{z^2-(0.5+a)z+0.5a}$$
+\subsection{零极点分布图}
+a = 0.8，0.9，1.1时，系统的零极点分布图及程序如下：
+\begin{enumerate}
+  \item 图像
+        \begin{center}
+          \includegraphics[width=0.6\linewidth]{01.jpg}
+        \end{center}
+  \item 代码
+        \lstinputlisting[language=MATLAB]{code/do.m}
+\end{enumerate}
 
-  \subsection{频率响应}
-    a = 0.8，0.9，1.0，1.1时，系统的频率响应函数图形及程序如下：
-    \begin{enumerate}
-      \item 图像
-      \begin{center}
-        \includegraphics[width=0.6\linewidth]{02-1.jpg}
-      \end{center}
-      \item 代码
-      \lstinputlisting[language=MATLAB]{code/next.m}
-    \end{enumerate}
+\subsection{频率响应}
+a = 0.8，0.9，1.0，1.1时，系统的频率响应函数图形及程序如下：
+\begin{enumerate}
+  \item 图像
+        \begin{center}
+          \includegraphics[width=0.6\linewidth]{02-1.jpg}
+        \end{center}
+  \item 代码
+        \lstinputlisting[language=MATLAB]{code/next.m}
+\end{enumerate}
 
 \section{实验结果与分析}
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet pharetra orci. Pellentesque ex est, ultricies non viverra sed, iaculis sed est. Suspendisse ex felis, aliquam et nulla in, vehicula gravida velit. In porttitor volutpat tincidunt. Aenean eleifend non augue sit amet ultrices. Proin rutrum odio vitae est luctus, eu facilisis leo dapibus. Aliquam commodo efficitur erat, sit amet pulvinar nulla ultrices ac. Vestibulum ullamcorper malesuada odio. Suspendisse id sollicitudin arcu. Nam fringilla commodo neque quis posuere. Sed lobortis justo nisl, ut molestie sapien semper ac. Proin in massa vel neque tempus porta id accumsan magna. Aliquam pharetra lacus ac arcu accumsan varius. Praesent condimentum mi vitae purus elementum imperdiet.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet pharetra orci. Pellentesque ex est, ultricies non viverra sed, iaculis sed est. Suspendisse ex felis, aliquam et nulla in, vehicula gravida velit. In porttitor volutpat tincidunt. Aenean eleifend non augue sit amet ultrices. Proin rutrum odio vitae est luctus, eu facilisis leo dapibus. Aliquam commodo efficitur erat, sit amet pulvinar nulla ultrices ac. Vestibulum ullamcorper malesuada odio. Suspendisse id sollicitudin arcu. Nam fringilla commodo neque quis posuere. Sed lobortis justo nisl, ut molestie sapien semper ac. Proin in massa vel neque tempus porta id accumsan magna. Aliquam pharetra lacus ac arcu accumsan varius. Praesent condimentum mi vitae purus elementum imperdiet.
 
-  Etiam in bibendum arcu. Etiam porta metus ligula. Cras tempor, leo vel faucibus consequat, diam justo malesuada ex, et pretium risus est sit amet lectus. In sit amet efficitur quam. Maecenas quis molestie odio, et consectetur augue. Mauris erat erat, tristique a nunc in, molestie molestie lectus. Nullam commodo ornare urna, vel tincidunt libero aliquam ut. Ut hendrerit nunc id sapien tristique mollis. Aenean maximus, neque molestie dignissim cursus, augue neque dictum purus, vitae varius diam ex vitae est. Nulla bibendum facilisis semper. Nulla placerat ultricies lorem, quis consequat metus pulvinar eu. Morbi sed massa arcu. Nulla sagittis felis a suscipit elementum.
+Etiam in bibendum arcu. Etiam porta metus ligula. Cras tempor, leo vel faucibus consequat, diam justo malesuada ex, et pretium risus est sit amet lectus. In sit amet efficitur quam. Maecenas quis molestie odio, et consectetur augue. Mauris erat erat, tristique a nunc in, molestie molestie lectus. Nullam commodo ornare urna, vel tincidunt libero aliquam ut. Ut hendrerit nunc id sapien tristique mollis. Aenean maximus, neque molestie dignissim cursus, augue neque dictum purus, vitae varius diam ex vitae est. Nulla bibendum facilisis semper. Nulla placerat ultricies lorem, quis consequat metus pulvinar eu. Morbi sed massa arcu. Nulla sagittis felis a suscipit elementum.
 
 \end{document}

@@ -1,4 +1,4 @@
-\ProvidesClass{zjureport}
+\ProvidesClass{hitreport}
 \LoadClass{article}
 \RequirePackage{xeCJK}
 \RequirePackage{CJKnumb}
@@ -26,6 +26,8 @@
 \setCJKmainfont[ItalicFont={KaiTi},BoldFont={SimHei}]{SimSun}
 \setmainfont[ItalicFont={KaiTi}]{CMU Serif}
 \setmonofont[ItalicFont={KaiTi}]{Lucida Console}
+\setCJKfamilyfont{hwxk}{STXingkai}             %使用STXingkai华文行楷字体
+\newcommand{\huawenxingkai}{\CJKfamily{hwxk}}
 
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}
@@ -82,33 +84,17 @@
 \rhead{学号：\@stuid}
 
 % 下划线定义
-\def\zjuu[#1]#2{
+\def\hitu[#1]#2{
   \underline{\hbox to #1{\hfil#2\hfil}}}
 
 % 首页头部
 \newcommand{\makeheader}{
-\begin{figure}[h]
-  \begin{minipage}{0.7\linewidth}
-    \centerline{\includegraphics[width=\linewidth]{head.jpg}}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.3\linewidth}
-    \raggedleft
-    \begin{tabular*}{.8\linewidth}{ll}
-      专业： & \zjuu[70pt]\@major   \\
-      姓名： & \zjuu[70pt]\@name    \\
-      学号： & \zjuu[70pt]\@stuid   \\
-      日期： & \zjuu[70pt]\@date \\
-      地点： & \zjuu[70pt]\@lab
-    \end{tabular*}
-  \end{minipage}
-\end{figure}
 
 \begin{table}[!htbp]
   \centering
   \begin{tabular*}{\linewidth}{llllll}
-    课程名称： & \zjuu[150pt]\@course   & 指导老师： & \zjuu[50pt]\@instructor   & 成绩：       &  \zjuu[50pt]\@grades \\
-    实验名称： & \zjuu[150pt]\@expname & 实验类型： &\zjuu[50pt]\@exptype & 同组学生姓名：& \zjuu[50pt]\@partner
+    课程名称： & \hitu[150pt]\@course   & 指导老师： & \hitu[50pt]\@instructor   & 成绩：       &  \hitu[50pt]\@grades \\
+    实验名称： & \hitu[150pt]\@expname & 实验类型： &\hitu[50pt]\@exptype & 同组学生姓名：& \hitu[50pt]\@partner
   \end{tabular*}
 \end{table}
 \thispagestyle{empty}
@@ -119,10 +105,10 @@
 \newcommand{\makecover}{
   \begin{center}
     \begin{center}
-      \includegraphics[width=0.8\linewidth]{cover.png}
+      \includegraphics[width=0.4\linewidth]{cover.png}
     \end{center}
-    \vspace{1cm}
-    \bfseries\huge{本科实验报告}\\
+    \vspace{3.5cm}
+    \bfseries{\huawenxingkai \fontsize{42}{0} \selectfont \@title}\\
     \vspace{0.5cm}
     \bfseries\Large{\@expname}
     \vspace{3cm}
@@ -133,15 +119,15 @@
       \renewcommand\arraystretch{1.6}
       \begin{tabular}{p{3cm}p{6cm}}
         \bfseries{课程名称：} & \@course \\ \cline{2-2}
-        \bfseries{姓名：}     & \@name   \\ \cline{2-2}
         \bfseries{学院：}     & \@college \\ \cline{2-2}
         \bfseries{专业：}     & \@major  \\ \cline{2-2}
         \bfseries{学号：}     & \@stuid  \\ \cline{2-2}
+        \bfseries{姓名：}     & \@name   \\ \cline{2-2}
         \bfseries{指导老师：} & \@instructor  \\ \cline{2-2}
       \end{tabular}
     \end{center}
     \vspace{2cm}
-    \Large{\@date}
+    \Large{\number\year 年 \number\month 月 \number\day 日}
   \end{center}
   \thispagestyle{empty}
   \newpage
